@@ -1,0 +1,50 @@
+########################
+OnConnect to server
+########################
+Receive from server
+"check,map1,map2,map3,map4"
+
+Reply to server
+"admin,true"
+	^user is an admin, has every map
+"user,false"
+	^user is user, dose not have all the map
+
+########################
+admin add fingerprint
+########################
+"Add,fingerprintname,x,y,mac1,sig1,mac2,sig2,mac3,sig3...mac10,sig10"
+
+Server reply
+"Add,true/false"
+true = success, false = failed
+
+########################
+admin calibrate fingerprint
+########################
+"calibrate,fingerprintname,mac1,sig1,mac2,sig2...mac10,sig10"
+
+server reply
+"calibrate,true/false"
+
+########################
+user scan location
+########################
+"locate,mac1,sig1,mac2,sig2...mac10,sig10"
+
+server reply
+"locate,fingerprintname,x,y"
+
+########################
+Admin Add Emergency
+########################
+"emergency,emergencyname,x,y"
+
+server send to every client
+"emergency,emergencyname,x,y"
+########################
+Admin remove emergency
+"remergency,emergencyname"
+
+server send to every client
+"remergency,emergencyname"
