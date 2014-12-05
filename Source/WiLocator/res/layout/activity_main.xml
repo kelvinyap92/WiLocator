@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical" >
+
+        <Button
+        android:id="@+id/addToolButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Setup Fingerprint"
+        android:onClick="add" />
+        
+<!--            <Button -->
+<!--         android:id="@+id/calibrateButton" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="Calibrate" -->
+<!--         android:onClick="calibrate" /> -->
+    
+         <Button
+            android:id="@+id/locateButton"
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content" 
+            android:text="Broadcast Emergency" 
+            android:onClick="locate" /> 
+ 
+   <Button
+        android:id="@+id/blacklistButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Blacklist Mac Address"
+        android:onClick="addBlacklist" />
+   
+     <Button
+        android:id="@+id/settings"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:onClick="settings" />
+     
+     <!--To delete  -->
+       <Button
+        android:id="@+id/temp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="temp"
+        android:onClick="temp" />
+   
+   
+   
+</LinearLayout>
