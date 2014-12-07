@@ -1,0 +1,16 @@
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\IPS server (WPF).exe.config
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\IPS server (WPF).exe
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\IPS server (WPF).pdb
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\Alchemy.dll
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\MainWindow.baml
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\MainWindow.g.cs
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\App.g.cs
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\IPS server (WPF)_MarkupCompile.cache
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\IPS server (WPF).g.resources
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\IPS server (WPF).exe
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\IPS server (WPF).pdb
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\obj\Release\IPS server (WPF).csprojResolveAssemblyReference.cache
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\Microsoft.Experimental.Collections.dll
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\Microsoft.Experimental.Collections.xml
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\tcpServer.dll
+D:\Users\Davion\Desktop\Class Stuff\CS4900\IPSserver\IPS server (WPF)\bin\Release\IPS server (WPF).XML

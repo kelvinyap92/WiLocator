@@ -1,0 +1,32 @@
+// Go to git hub, somewhere in the middle-right hand side of the
+// page with your repo is the url to use. Go to the directory
+// you want your project folder to be in
+
+// This creates the folder, all up to date
+git clone "myurl"
+
+// Now you need to cd into just the one project folder that was created.
+// don't worry about the ones inside it
+
+// Now in eclipse, change the workspace to WhateverPath/the_folder_that_was_created_after_clone
+// If the project doesn't show up, go to import, general, existing project, then get the 
+// Project selected, hit ok
+// Now make changes to the project
+
+// After you are done, add your changes
+git add -A // -A is just changes, * would be everything
+
+// Then you need to commit your changes
+git commit -a -m "My message" // With the quotes this time
+
+// -a is all, -m is a message
+
+// Before you push, you should get other peoples changes
+// first to avoid conflict
+git pull
+
+// Then you can commit your changes
+git push origin master
+
+// Now go to your eclipse project and refresh
+// If there is ever a problem with your peoject, just delete the folder and re-clone

@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IPS server (WPF)</name>
+    </assembly>
+    <members>
+        <member name="T:IPS_server__WPF_.TCPserver">
+            <summary>
+            Meh
+            </summary>
+        </member>
+        <member name="M:IPS_server__WPF_.TCPserver.#ctor">
+            <summary>
+            Constructor that provides the information of the Server to TCPserver class
+            </summary>
+        </member>
+        <member name="T:IPS_server__WPF_.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:IPS_server__WPF_.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:IPS_server__WPF_.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.#ctor(System.String,System.String[],System.String[])">
+            <summary>
+            Creates a new Fingerprint object
+            </summary>
+            <param name="Fingname">Name of the Fingerprint</param>
+            <param name="XY">Coordinates of the fingerprint (Will be converted to Double)</param>
+            <param name="MAddress">Array of associated mac addresses</param>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.FingCalibrate(System.String[])">
+            <summary>
+            Check and change input's mac addresses and signals with the Fingerprint's mac addresses and signal ranges
+            <para>For each successive changes to the range, the value returned will increase</para>
+            <para>Returns 0 if no mac address ranges has been changed</para>
+            <para>Uses the following functions: MacTable.AddMac</para>
+            </summary>
+            <param name="MAddress">array of Mac Address, EG:"M1,20,M2,20...M10,20"</param>
+            <returns></returns>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.FingRecalibrate(System.String[])">
+            <summary>
+            Resets the Mactable,SigRange and MacStack then insert the newly received mac address
+            </summary>
+            <param name="MAddress">EG: Mac1,Sig1,Mac2,Sig2,...MacN,SigN</param>
+            <returns></returns>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.MacCompare(System.String[],System.Int32)">
+            <summary>
+            Compare a string of mac addresses + signals with this fingerprint's Mac addresses signal range
+            <para>Returns the number of signals that passes the checks</para> 
+            </summary>
+            <param name="input">String array containing mac and signal subsequently</param>
+            <param name="precision">Number of passed signals required to consider a locate success</param>
+            <returns>Returns the number of signals that passes the checks</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.MacRemove(System.String)">
+            <summary>
+            Attempt to Deassociate mac address from this fingerprint
+            <para>Returns 1 if success, -1 if failed</para>
+            </summary>
+            <param name="input">A string containing the Mac Address</param>
+            <returns>Returns 1 if success, -1 if mac not found</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.FingRemove">
+            <summary>
+            Dereference this fingerprint from associated Mac Address
+            <para>Returns a string array containing the associated mac to this fingerprint</para>
+            </summary>
+            <returns>Returns a string array containing the associated mac to this fingerprint</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.saveFing">
+            <summary>
+            Returns a string array that can be parsed by the parser for Loading purposes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.SigCalibrate(System.Int32,System.Int16)">
+            <summary> 
+            Returns 1 if the input replaces the MIN or MAX value in the signal array
+            otherwise, returns 0 for no changes
+            </summary>
+            <param name="index">index of the signal range in SigArray</param>
+            <param name="input">the value to be compared with the signal range for calibration</param>
+            <returns>Returns 1 if the input replaces the MIN or MAX value in the signal array
+            <para>returns 0 for no changes</para></returns>
+        </member>
+        <member name="M:IPS_server__WPF_.Fingerprint.SigCompare(System.Int32,System.Int16)">
+            <summary>
+            Checks if the input is within the range of the fingerprint's Mac address.
+            <para>Returns 0 if in range, 1 if not in range.</para>
+            </summary>
+            <param name="index">The index of MacAddress in SigRange</param>
+            <param name="input">The value to be compared with the SigRange</param>
+            <returns></returns>
+        </member>
+        <member name="P:IPS_server__WPF_.Fingerprint.MacStack">
+            <summary>
+            A Stack to determine how many mac does the fingerprint has.        
+            <para>If stack is 0, there are no more empty spot for new Mac Address.</para>
+            </summary>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.Save">
+            <summary>
+            Saves every Blacklisted Mac and Fingerprint into Test.txt
+            <para>returns the number of commands generated</para>
+            </summary>
+            <returns>returns the number of commands generated</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.Load">
+            <summary>
+            Read and parse commands line by line from file
+            <para>returns number of commands loaded</para>
+            </summary>
+            <returns>returns number of commands loaded</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.AddFing(System.String,System.String[],System.String[])">
+            <summary>
+            Adds a new Fingerprint into the database
+            <para>0 if success, -1 if Fingerprint exists</para>
+            <para>Calls by the switch</para>
+            </summary>
+            <param name="Fingname">Name of the Fingerprint</param>
+            <param name="XY">Coordinates of the XY point</param>
+            <param name="MAddress">Array of Mac Address</param>
+            <returns>0 if success, -1 if Fingerprint exists</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.DelFing(System.String)">
+            <summary>
+            Dereference a fingerprint from all table for GC to collect
+            <para>returns 0 if removal success, -1 otherwise</para>
+            </summary>
+            <param name="Fingname">Name of fingerprint to be removed</param>
+            <returns>0 if removed, -1 if failed</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.CalibrateFing(System.String,System.String[])">
+            <summary>
+            Calibrates the fingerprint's mac address signal range
+            <para>Returns -1 if Fingerprint is not found, otherwise return number of changes</para>
+            </summary>
+            <param name="Fingername">Name of the fingerprint to be calibrated</param>
+            <param name="macAddress">Array containing Mac addresses and signals for checking</param>
+            <returns>Returns -1 if Fingerprint is not found, otherwise return number of changes</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.RecalibrateFing(System.String,System.String[])">
+            <summary>
+            Clears a Fingerprint's associated mac address table and then reassociate with 
+            <para>the new mac address and signals</para>
+            </summary>
+            <param name="Fingername">Name of the fingerprint to be recalibrated</param>
+            <param name="macAddress">Array containing Mac addresses and signals for checking</param>
+            <returns></returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.AddEmergency(System.String,System.String[])">
+            <summary>
+            Not implemented yet due to Core does not meet sufficient precision
+            </summary>
+            <param name="Emername">Emergency's name</param>
+            <param name="XY">Coordinate of the point on the map</param>
+            <returns>True if success, false otherwise</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.ScanLocation(System.String[],System.Int32)">
+            <summary>
+            Check for the location of the client by comparing client's mac addresses and signals
+            <para>with the mac addresses and signals in the Fingerprint database</para>
+            <para>Returns the Fingerprint name if found, otherwise return empty string</para>
+            </summary>
+            <param name="macAddress">Array containing the mac addresses and signals</param>
+            <param name="precision">The number of macs that are in range to be considered a successful comparison</param>
+            <returns>Returns the Fingerprint name if found, returns null otherwise</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.BlacklistMac(System.String)">
+            <summary>
+            Adds a Mac address to a Blacklist HashSet "MacBlacklist"         
+            <para>Upon successful add to blacklist, Removes every fingerprint that contains this mac address</para>
+            <para>after deassociating given mac from every fingerprint, removes mac address from MacDict </para>
+            <para>Calls by the switch</para>
+            </summary>
+            <param name="Mac">the Mac address to be blacklisted</param>
+            <returns>True if success, False otherwise</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.WhitelistMac(System.String)">
+            <summary>
+            Removes Mac Address from the blacklist
+            <para>return TRUE if success, false if not exist</para>
+            </summary>
+            <param name="Mac"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.AddMac(System.String,IPS_server__WPF_.Fingerprint)">
+            <summary>
+            Adds the given Mac Address and Fingerprint into the dictionary
+            <para>If given Mac Address exist in blacklist, function will not attempt to add the mac address</para>
+            <para>Returns true if success, Fail otherwise (probably blacklisted or exist)</para>
+            </summary>
+            <param name="Mac">The mac adress where the Fingerprint will be added to</param>
+            <param name="Finger">The Fingerprint to be added</param>
+            <returns>True if success, Fail otherwise</returns>
+        </member>
+        <member name="M:IPS_server__WPF_.MacTable.GetFingObject(System.String)">
+            <summary>
+            Returns the pointer to the Fingerprints if found.
+            </summary>
+            <param name="Finger">the name of the Fingerprint object</param>        
+            <returns>Output if found, null otherwise</returns>
+        </member>
+        <member name="T:IPS_server__WPF_.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:IPS_server__WPF_.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:IPS_server__WPF_.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:IPS_server__WPF_.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:IPS_server__WPF_.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
