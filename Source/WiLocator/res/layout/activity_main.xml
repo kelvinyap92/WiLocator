@@ -9,8 +9,8 @@
         android:id="@+id/addToolButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Setup Fingerprint"
-        android:onClick="add" />
+        android:text="@string/addToolButton"
+        android:onClick="setupFingerprint" />
         
 <!--            <Button -->
 <!--         android:id="@+id/calibrateButton" -->
@@ -23,31 +23,32 @@
             android:id="@+id/locateButton"
             android:layout_width="fill_parent" 
             android:layout_height="wrap_content" 
-            android:text="Broadcast Emergency" 
-            android:onClick="locate" /> 
+            android:text="@string/broadcast" 
+            android:onClick="broadCastEmergency" /> 
  
    <Button
         android:id="@+id/blacklistButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Blacklist Mac Address"
+        android:text="@string/blacklist"
         android:onClick="addBlacklist" />
    
      <Button
         android:id="@+id/settings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/setting"
         android:onClick="settings" />
      
      <!--To delete  -->
+     <!-- 
        <Button
         android:id="@+id/temp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="temp"
         android:onClick="temp" />
-   
+    -->
    
    
 </LinearLayout>

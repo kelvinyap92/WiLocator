@@ -18,6 +18,9 @@
     
     
     <string name="calibrate">Calibrate</string>
- 
+    <string name="addToolButton">Setup Fingerprint</string>
+    <string name="broadcast">Broadcast Emergency</string>
+    <string name="blacklist">Blacklist Mac Address</string>
+    <string name="setting">Settings</string>
 
 </resources>

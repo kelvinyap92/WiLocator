@@ -33,13 +33,13 @@
         
           <activity
             android:name=".AddBlacklist"
-            android:label="AddBlacklist">
+            android:label="Blacklist">
             
         </activity>
         
              <activity
-            android:name=".AddFingerprint"
-            android:label="AddFingerprint">
+            android:name=".SetupFingerprint"
+            android:label="Setup Fingerprint">
             
         </activity>
         
@@ -56,8 +56,8 @@
         </activity>
         
                  <activity
-              android:name=".Locate"
-              android:label="Locate">
+              android:name=".Broadcast_Emergency"
+              android:label="Broadcast Emergency">
             </activity>
             
                      <activity

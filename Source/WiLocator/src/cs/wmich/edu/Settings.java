@@ -18,6 +18,11 @@ import android.widget.Toast;
 
 
 
+/**
+ * Define the setup port number and ip address
+ * @author kelvinyap
+ *
+ */
 public class Settings extends Activity   {
 	
 //tcp stuff here

@@ -1,0 +1,18 @@
+How to test and install the android program.
+
+An APK FILE (WiLocator) had been included in the source folder and can be directly installed on an android devices.
+
+If you plan to use this project for future implementation you can,
+
+1) Open Eclipse -> File -> Import -> Android -> Existing android source code -> Browse for the src directory -> Finish
+2) From there you can modify/update to your specifications
+
+
+To export the android application you can,
+
+1) Right click the project folder (Wilocator) on your project explorer view and click EXPORT
+2) Then Select Android tab and click on Export Android Application
+3) Next-> Default name of the project should be generated.
+    i) If you have an existing keystore for google, browse the location of that key and type in the associated password
+    ii) If not you can create a new keystore
+4) Enter key password, and select your destination APK file -> FINISH
